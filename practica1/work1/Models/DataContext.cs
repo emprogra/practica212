@@ -12,5 +12,7 @@ namespace work1.Models
         {
 
         }
+
+        public System.Data.Entity.DbSet<work1.Models.Persona> Personas { get; set; }
     }
 }
