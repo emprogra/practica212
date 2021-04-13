@@ -12,5 +12,7 @@ namespace Work3.Models
         {
 
         }
+
+        public System.Data.Entity.DbSet<Work3.Models.Dato> Datoes { get; set; }
     }
 }
