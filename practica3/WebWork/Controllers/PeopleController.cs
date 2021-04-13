@@ -15,12 +15,14 @@ namespace WebWork.Controllers
         private DataContext db = new DataContext();
 
         // GET: People
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.People.ToList());
         }
 
         // GET: People/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace WebWork.Controllers
         }
 
         // GET: People/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +47,7 @@ namespace WebWork.Controllers
         // POST: People/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PerosnId,Name,CovidCount")] Person person)
@@ -59,6 +63,7 @@ namespace WebWork.Controllers
         }
 
         // GET: People/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +81,7 @@ namespace WebWork.Controllers
         // POST: People/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PerosnId,Name,CovidCount")] Person person)
@@ -90,6 +96,7 @@ namespace WebWork.Controllers
         }
 
         // GET: People/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +112,7 @@ namespace WebWork.Controllers
         }
 
         // POST: People/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
